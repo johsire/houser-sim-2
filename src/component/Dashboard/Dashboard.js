@@ -12,7 +12,7 @@ class Dashboard extends Component {
         <House />
 
         <div className="button">
-          <Link to="/Wizard">
+          <Link to="/wizard">
             <button >Add New Property </button>
           </Link>
         </div>
