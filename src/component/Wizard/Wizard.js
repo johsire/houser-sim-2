@@ -7,13 +7,20 @@ class Wizard extends Component {
     super();
 
     this.state={
-      propertyName: '',
+      name: '',
       address: '',
       city: '',
       state: '',
       zip: 0,
     }
   };
+
+  componentDidMount() {
+    axios.get('/api/house')
+      .then((res) => {
+      this.setState({ houses: res.data.house })
+    })
+  }
   
   handleChange = (e) => {
     this.setState({
@@ -25,7 +32,7 @@ class Wizard extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const data = {
-      propertyName: this.state.propertyName,
+      name: this.state.name,
       address: this.state.address,
       city: this.state.city,
       state: this.state.state,
@@ -36,7 +43,7 @@ class Wizard extends Component {
       .then(res => {
         // console.log(res.data, 'response from backend');
         this.setState({
-          propertyName: '',
+          name: '',
           address: '',
           city: '',
           state: '',
@@ -57,7 +64,7 @@ class Wizard extends Component {
       <div>
         <h3>Wizard</h3>
 
-        Property Name: {this.state.propertyName} <br/>
+        Name: {this.state.name} <br/>
         Address: {this.state.address} <br/>
         City: {this.state.city}
         State: {this.state.state}
@@ -71,8 +78,8 @@ class Wizard extends Component {
           </div>
         <div className="inputBox">
           <br/>
-          <input name="propertyName" type='text' placeholder='Property Name' 
-          value={this.state.propertyName} onChange={e => this.handleChange(e)} 
+          <input name="name" type='text' placeholder='Property Name' 
+          value={this.state.name} onChange={e => this.handleChange(e)} 
           />
           <br/>
           <br/>

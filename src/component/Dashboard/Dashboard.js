@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import House from '../House/House';
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      houses: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get('/api/house')
+      .then((res) => {
+      this.setState({ houses: res.data.house })
+    })
+  }
+
+
   render() {
     return (
       <div>
