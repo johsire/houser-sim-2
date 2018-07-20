@@ -18,6 +18,14 @@ class Wizard extends Component {
     return (
       <div>
         <h3>Wizard</h3>
+
+        Property Name: {this.state.propertyName} <br/>
+        Address: {this.state.address} <br/>
+        City: {this.state.city}
+        State: {this.state.state}
+        Zip: {this.state.zip} <br/><br/>
+
+
           <div className="button">
             <Link to="/">
               <button>Cancel</button>
