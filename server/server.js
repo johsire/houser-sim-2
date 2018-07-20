@@ -7,6 +7,11 @@ import controller from './controller'
 
 const app = express();
 
+massive(process.env.CONNECTION_STRING)
+.then(dbInstance => {
+  console.log(dbInstance)
+  app.set('db', dbInstance)})
+.catch(err = console.log(err, 'Alert! Error! We got one!'))
 app.use(bodyParser.json());
 
 
