@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Wizard extends Component {
+  constructor() {
+    super();
+
+    this.state={
+      propertyName: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: 0,
+    }
+  };  
+    
   render() {
     return (
       <div>

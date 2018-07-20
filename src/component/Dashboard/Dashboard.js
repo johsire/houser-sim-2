@@ -8,15 +8,12 @@ class Dashboard extends Component {
     return (
       <div>
         <h2>Dashboard</h2>
-
-        <House />
-
-        <div className="button">
-          <Link to="/wizard">
-            <button >Add New Property </button>
-          </Link>
-        </div>
-
+          <House />
+          <div className="button">
+            <Link to="/wizard">
+              <button >Add New Property </button>
+            </Link>
+          </div>
       </div>
     );
   }
