@@ -4,10 +4,10 @@ class Wizard extends Component {
   render() {
     return (
       <div>
-      Wizard
+        <h3>Wizard</h3>
       </div>
     );
   }
-}
+};
 
 export default Wizard;
