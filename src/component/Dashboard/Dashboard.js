@@ -16,8 +16,13 @@ class Dashboard extends Component {
     axios.get('/api/house')
       .then((res) => {
       this.setState({ houses: res.data.house })
-    })
+    }),
+    axios.delete('/api/house')
+      .then((res) => {
+        this.setState ({ houses: res.data.house })
+      })
   }
+
 
 
   render() {
